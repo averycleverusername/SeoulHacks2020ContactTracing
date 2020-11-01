@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SeoulHacks WebApp</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" defer src="Main.js"></script>
+        <script src="https://cdn.jsdelivr.net/processing.js/1.6.6/processing.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="test">Input System for COVID-19 Contact Tracing Diagram Generator</div>
+        <br>
+        <button id="AddCPBtn" onclick="AddContactPopup()">Add Contact</button>
+        <div id="AddCPWndw" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Name:</p>
+                <input id="CPNameInput">
+                <br><br>
+                <hr>
+                <p>COVID-19 Test Status:</p>
+                <div id="DDBtnPH1">
+                    <span class="DDBtnPH">Positive</span>
+                </div>
+                <div class="DDMenu" id="CPDD1">
+                    <button id="CPDDMenuBtn1" onclick="TestStatusInput()" class="DDBtn">Select Test Status</button>
+                    <div id="CPDDMenu1" class="DDContent">
+                        <a href="#" onclick="TestStatusInputSelect('Positive')">Positive</a>
+                        <a href="#" onclick="TestStatusInputSelect('Negative')">Negative</a>
+                        <a href="#" onclick="TestStatusInputSelect('Test Pending')">Test Pending</a>
+                    </div>
+                </div>
+                <hr>
+                <p>COVID-19 Degree of Contact:</p>
+                <div id="DDBtnPH2">
+                    <span class="DDBtnPH">F0</span>
+                </div>
+                <div id="DDBtnPH3">
+                    <span class="DDBtnPH">F1</span>
+                </div>
+                <div id="DDBtnPH5">
+                    <span class="DDBtnPH">F2</span>
+                </div>
+                <div class="DDMenu" id="CPDD2">
+                    <button id="CPDDMenuBtn2" onclick="ContactDegreeInput()" class="DDBtn">Select Degree of Contact</button>
+                    <div id="CPDDMenu2" class="DDContent">
+                        <a href="#" onclick="ContactDegreeInputSelect('F1')" id="CDIF1">F1</a>
+                        <a href="#" onclick="ContactDegreeInputSelect('F2')" id="CDIF2">F2</a>
+                    </div>
+                </div>
+                <hr id="HR3">
+                <p id="PCP">COVID-19 Parent Contact:</p>
+                <div id="DDBtnPH4">
+                    <span class="DDBtnPH" id="DDBtnPH4T">F1</span>
+                </div>
+                <div id="DDBtnPH6">
+                    <span class="DDBtnPH" id="DDBtnPH6T">F1</span>
+                </div>
+                <div class="DDMenu" id="CPDD3">
+                    <button id="CPDDMenuBtn3" onclick="ParentContactInput()" class="DDBtn">Select Parent Contact</button>
+                    <div id="CPDDMenu3" class="DDContent">
+                        <a href="#" onclick="ParentContactInputSelect(C1.name)"></a>
+                        <a href="#" onclick="ParentContactInputSelect(C2.name)"></a>
+                        <a href="#" onclick="ParentContactInputSelect(C3.name)" id="PCIS3"></a>
+                    </div>
+                </div>
+                <div class="SubmitBtn">
+                    <button class="Submit" id="Submit" type="button">Submit</button>
+                </div>
+            </div>
+        </div>
+        <p align="center"> 
+            <canvas id="mycanvas"></canvas> 
+        </p>  
+    </body>
+    
+</html>
